@@ -119,7 +119,7 @@ const ConstellationLine: React.FC<ConstellationLineProps> = ({
 
 export const GeoFinale: React.FC = () => {
   const frame = useCurrentFrame();
-  const { fps, width, height } = useVideoConfig();
+  const { width, height } = useVideoConfig();
   const { fontFamily } = loadSpaceGrotesk();
 
   // Central emblem convergence
@@ -152,14 +152,56 @@ export const GeoFinale: React.FC = () => {
 
   // Constellation nodes
   const nodes = [
-    { x: width * 0.2, y: height * 0.25, size: 14, color: COLORS.blue, delay: 0 },
-    { x: width * 0.35, y: height * 0.15, size: 10, color: COLORS.gold, delay: 3 },
-    { x: width * 0.65, y: height * 0.2, size: 12, color: COLORS.pink, delay: 6 },
+    {
+      x: width * 0.2,
+      y: height * 0.25,
+      size: 14,
+      color: COLORS.blue,
+      delay: 0,
+    },
+    {
+      x: width * 0.35,
+      y: height * 0.15,
+      size: 10,
+      color: COLORS.gold,
+      delay: 3,
+    },
+    {
+      x: width * 0.65,
+      y: height * 0.2,
+      size: 12,
+      color: COLORS.pink,
+      delay: 6,
+    },
     { x: width * 0.8, y: height * 0.3, size: 8, color: COLORS.blue, delay: 9 },
-    { x: width * 0.15, y: height * 0.6, size: 10, color: COLORS.gold, delay: 4 },
-    { x: width * 0.85, y: height * 0.65, size: 12, color: COLORS.pink, delay: 7 },
-    { x: width * 0.25, y: height * 0.8, size: 8, color: COLORS.berry, delay: 10 },
-    { x: width * 0.7, y: height * 0.85, size: 14, color: COLORS.blue, delay: 2 },
+    {
+      x: width * 0.15,
+      y: height * 0.6,
+      size: 10,
+      color: COLORS.gold,
+      delay: 4,
+    },
+    {
+      x: width * 0.85,
+      y: height * 0.65,
+      size: 12,
+      color: COLORS.pink,
+      delay: 7,
+    },
+    {
+      x: width * 0.25,
+      y: height * 0.8,
+      size: 8,
+      color: COLORS.berry,
+      delay: 10,
+    },
+    {
+      x: width * 0.7,
+      y: height * 0.85,
+      size: 14,
+      color: COLORS.blue,
+      delay: 2,
+    },
     { x: width * 0.5, y: height * 0.9, size: 10, color: COLORS.gold, delay: 8 },
   ];
 
@@ -289,7 +331,7 @@ export const GeoFinale: React.FC = () => {
                 duration: 0.6,
                 stagger: 0.08,
                 ease: "back.out(1.4)",
-              }
+              },
             );
             return tl;
           }}
@@ -329,7 +371,7 @@ export const GeoFinale: React.FC = () => {
                 duration: 0.3,
                 stagger: 0.015,
                 ease: "none",
-              }
+              },
             );
             return tl;
           }}

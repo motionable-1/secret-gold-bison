@@ -5,7 +5,6 @@ import {
   useVideoConfig,
   spring,
   interpolate,
-  Easing,
 } from "remotion";
 import { TextAnimation } from "../../library/components/text/TextAnimation";
 import { loadFont as loadSpaceGrotesk } from "@remotion/google-fonts/SpaceGrotesk";
@@ -208,7 +207,7 @@ export const LiquidMorph: React.FC = () => {
                 duration: 0.7,
                 stagger: 0.03,
                 ease: "power3.out",
-              }
+              },
             );
             return tl;
           }}
@@ -249,7 +248,7 @@ export const LiquidMorph: React.FC = () => {
                 duration: 0.4,
                 stagger: 0.02,
                 ease: "power2.out",
-              }
+              },
             );
             return tl;
           }}

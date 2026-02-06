@@ -6,7 +6,6 @@ import {
   spring,
   interpolate,
   Easing,
-  random,
 } from "remotion";
 import { TextAnimation } from "../../library/components/text/TextAnimation";
 import { loadFont as loadSpaceGrotesk } from "@remotion/google-fonts/SpaceGrotesk";
@@ -52,10 +51,11 @@ const StrobeBar: React.FC<StrobeBarProps> = ({
   const barSize = (isHorizontal ? height : width) / total;
   const barLength = isHorizontal ? width : height;
 
-  const slide = interpolate(enter, [0, 1], [
-    index % 2 === 0 ? -barLength : barLength,
-    0,
-  ]);
+  const slide = interpolate(
+    enter,
+    [0, 1],
+    [index % 2 === 0 ? -barLength : barLength, 0],
+  );
 
   return (
     <div
@@ -84,10 +84,15 @@ export const GlitchPulse: React.FC = () => {
 
   // Background strobe effect
   const strobeFlash = Math.floor(frame / 4) % 2 === 0;
-  const flashOpacity = interpolate(frame, [25, 30, 45, 50], [0, 0.15, 0.15, 0], {
-    extrapolateLeft: "clamp",
-    extrapolateRight: "clamp",
-  });
+  const flashOpacity = interpolate(
+    frame,
+    [25, 30, 45, 50],
+    [0, 0.15, 0.15, 0],
+    {
+      extrapolateLeft: "clamp",
+      extrapolateRight: "clamp",
+    },
+  );
 
   // Chromatic aberration offset
   const chromaOffset = interpolate(frame, [30, 40, 55, 65], [0, 6, 6, 0], {
@@ -218,7 +223,7 @@ export const GlitchPulse: React.FC = () => {
                   duration: 0.4,
                   stagger: 0.02,
                   ease: "expo.out",
-                }
+                },
               );
               return tl;
             }}
@@ -258,7 +263,7 @@ export const GlitchPulse: React.FC = () => {
                   duration: 0.4,
                   stagger: 0.02,
                   ease: "expo.out",
-                }
+                },
               );
               return tl;
             }}
@@ -291,7 +296,7 @@ export const GlitchPulse: React.FC = () => {
                 duration: 0.5,
                 stagger: 0.03,
                 ease: "expo.out",
-              }
+              },
             );
             return tl;
           }}
@@ -330,7 +335,7 @@ export const GlitchPulse: React.FC = () => {
                 duration: 0.5,
                 stagger: 0.1,
                 ease: "power3.out",
-              }
+              },
             );
             return tl;
           }}

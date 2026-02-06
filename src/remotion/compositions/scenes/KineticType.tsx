@@ -175,7 +175,7 @@ export const KineticType: React.FC = () => {
                       duration: 0.6,
                       stagger: 0.04,
                       ease: "back.out(1.7)",
-                    }
+                    },
                   );
                   return tl;
                 }}
