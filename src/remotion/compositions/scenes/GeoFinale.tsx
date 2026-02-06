@@ -86,7 +86,7 @@ const ConstellationLine: React.FC<ConstellationLineProps> = ({
   delay,
 }) => {
   const frame = useCurrentFrame();
-  const { fps, width, height } = useVideoConfig();
+  const { width, height } = useVideoConfig();
 
   const drawProgress = interpolate(frame - delay, [0, 20], [0, 1], {
     extrapolateLeft: "clamp",
@@ -119,7 +119,7 @@ const ConstellationLine: React.FC<ConstellationLineProps> = ({
 
 export const GeoFinale: React.FC = () => {
   const frame = useCurrentFrame();
-  const { width, height } = useVideoConfig();
+  const { fps, width, height } = useVideoConfig();
   const { fontFamily } = loadSpaceGrotesk();
 
   // Central emblem convergence
@@ -218,8 +218,8 @@ export const GeoFinale: React.FC = () => {
     { from: 7, to: 8, delay: 24 },
   ];
 
-  // Fade out at end
-  const fadeOut = interpolate(frame, [75, 90], [1, 0], {
+  // Fade out at the very end of the scene (last 30 frames)
+  const fadeOut = interpolate(frame, [90, 120], [1, 0], {
     extrapolateLeft: "clamp",
     extrapolateRight: "clamp",
   });
